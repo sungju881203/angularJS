@@ -1,0 +1,21 @@
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+</head>
+<body ng-app="rssApp">
+<div data-ng-controller="FeedController">
+    <h2>
+        <a href="#" ng-click="feedSrc='http://feeds.nytimes.com/nyt/rss/HomePage';loadFeed($event);">NYT RSS FEED</a>
+    </h2>
+
+    <ul>
+        <li ng-repeat="item in feeds">
+            <p><a href="{{ item.link }}">{{ item.title }}</a></p>
+            <p class="date">{{ item.publishedDate }}</p>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>
